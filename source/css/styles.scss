@@ -12,7 +12,22 @@ body {
   font-family: monospace;;
 }
 
+.container-tabs {
 
+  .tab {
+    //border: solid 1px white;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .tab-active {
+    background-color: $colour-fg;
+  }
+
+}
 
 
 
