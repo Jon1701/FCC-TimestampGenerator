@@ -1,0 +1,31 @@
+$colour-bg: #21252b;
+$colour-fg: #282c34;
+
+a {
+  color: #FFFFFF;
+}
+
+body {
+  background-color: $colour-bg;
+  color: #FFFFFF;
+  font-size: 100%;
+  font-family: monospace;;
+}
+
+
+
+
+
+
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.clearfix {
+  clear: both;
+}
