@@ -2,13 +2,7 @@
 var express = require('express');
 var app = express();
 
-app.get('/:userInput', function(req, res) {
-
-  // Store results in an object.
-  var results = {
-    'natural': null,
-    'unix': null
-  }
+app.get('/timestamp/:userInput', function(req, res) {
 
   // Convert Date object to natural date string.
   var getNaturalDateString = function(date) {
@@ -48,6 +42,12 @@ app.get('/:userInput', function(req, res) {
 
   }
 
+  // Store results in an object.
+  var results = {
+    'natural': null,
+    'unix': null
+  }
+
   // Get the route parameters, and convert to a JS date object..
   var date = new Date(req.params['userInput']);
 
@@ -76,6 +76,12 @@ app.get('/:userInput', function(req, res) {
   // Return the results to client.
   res.send(results);
 
+});
+
+// Root folder. Serve index.html.
+app.use(express.static('build'));
+app.get('/', function(req, res) {
+  res.render(__dirname + '/build/index.html');
 });
 
 // Listen on port 8080.
