@@ -31,6 +31,13 @@ export default class TabContentsWeb extends React.Component {
         })
       });
 
+      // Error check.
+      jqxhr.fail(function(e) {
+        thisComp.setState({
+          error: "Invalid Date"
+        });
+      });
+
     });// end submit onclick.
 
     // When the Reset button is clicked, restore initial state.
@@ -48,6 +55,7 @@ export default class TabContentsWeb extends React.Component {
           natural: null,
           unix: null
         },
+        error: null,
         found: false
       })
 
@@ -99,6 +107,8 @@ export default class TabContentsWeb extends React.Component {
           <div className="container-input">
             <input type="text" id="textinput-date"/>
           </div>
+
+          <div className="container-error text-center">{ this.state.error }</div>
 
           <div className="container-buttons">
             <button id="btn-submit">Convert</button>

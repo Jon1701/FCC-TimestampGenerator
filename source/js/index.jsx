@@ -18,7 +18,7 @@ class UserInterface extends React.Component {
 
     // Default state.
     this.state = {
-      activeTab: 0  // Currently active tab.
+      activeTab: 1  // Currently active tab.
     }
   }
 

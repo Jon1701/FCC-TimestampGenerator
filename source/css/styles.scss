@@ -48,7 +48,6 @@ body {
   padding: 25px;
 }
 
-
 .container-tab-contents-web {
 
   .container-form {
@@ -73,7 +72,10 @@ body {
 
         text-align: center;
       }
+    }
 
+    .container-error {
+      margin: 5px;
     }
 
     .container-buttons {
@@ -108,4 +110,9 @@ body {
     }
   }
 
+}
+
+
+.container-tab-http {
+  
 }
