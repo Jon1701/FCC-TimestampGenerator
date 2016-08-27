@@ -12,19 +12,6 @@ body {
   font-family: monospace;
 }
 
-.tab {
-  background-color: $colour-bg;
-  display: inline-block;
-  width: 50%;
-  float: left;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-.tab-active {
-  background-color: $colour-fg;
-}
-
 .text-center {
   text-align: center;
 }
@@ -44,75 +31,12 @@ body {
 .clearfix {
   clear: both;
 }
+
 .container-tab-contents {
   padding: 25px;
 }
 
-.container-tab-contents-web {
-
-  .container-form {
-
-    margin: 0 auto;
-    width: 80%;
-
-    .container-input {
-      margin: 5px;
-
-      input[type="text"] {
-        margin: 5px;
-        background-color: $colour-bg;
-        border: solid 0px $colour-bg;
-
-        height: 40px;
-        width: 100%;
-
-        font-family: monospace;
-        font-size: 20px;
-        color: #FFFFFF;
-
-        text-align: center;
-      }
-    }
-
-    .container-error {
-      margin: 5px;
-    }
-
-    .container-buttons {
-      button {
-        height: 40px;
-        background-color: $colour-bg;
-        color: #FFFFFF;
-        border: solid 1px $colour-fg;
-
-        padding-left: 30px;
-        padding-right: 30px;
-
-        font-family: monospace;
-      }
-    }
-
-  }
-
-  .table {
-
-    margin: 0 auto;
-    display: table;
-
-
-    .row {
-      display: table-row;
-    }
-
-    .col {
-      display: table-cell;
-      padding: 10px;
-    }
-  }
-
-}
-
-
-.container-tab-http {
-  
-}
+@import '_description';
+@import '_tabs';
+@import '_tab-contents-web';
+@import '_tab-contents-http';
