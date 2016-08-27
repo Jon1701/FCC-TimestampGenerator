@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Description from './Description.jsx';
 import TabContainer from './TabContainer.jsx';
 import TabContents from './TabContents/TabContents.jsx';
 
@@ -26,6 +27,8 @@ class UserInterface extends React.Component {
   render() {
     return (
       <div>
+
+        <Description/>
 
         <TabContainer activeTab={this.state.activeTab} handleTabClick={this.handleActiveTabChange.bind(this)}/>
 
