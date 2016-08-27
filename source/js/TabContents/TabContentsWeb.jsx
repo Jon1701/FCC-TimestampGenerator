@@ -39,6 +39,9 @@ export default class TabContentsWeb extends React.Component {
       // Prevent default action.
       e.preventDefault();
 
+      // Reset textbox.
+      $("#textinput-date").val("");
+
       // Restore Initial state.
       thisComp.setState({
         results: {
