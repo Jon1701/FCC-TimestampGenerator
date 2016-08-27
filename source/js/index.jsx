@@ -28,6 +28,9 @@ class UserInterface extends React.Component {
       <div>
 
         <TabContainer activeTab={this.state.activeTab} handleTabClick={this.handleActiveTabChange.bind(this)}/>
+
+        <div className="clearfix"></div>
+
         <TabContents activeTab={this.state.activeTab} />
 
 

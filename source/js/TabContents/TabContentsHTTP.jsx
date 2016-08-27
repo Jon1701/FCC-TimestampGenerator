@@ -15,7 +15,8 @@ export default class TabContentsHTTP extends React.Component {
     // Classes for this component render.
     var myClasses = classNames({
       'tab-active': this.props.active,
-      'hidden': this.props.active == false
+      'hidden': this.props.active == false,
+      'container-tab-contents': true
     })
 
     return (
