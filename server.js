@@ -9,15 +9,13 @@ app.get('/hostname', function(req, res) {
   })
 });
 
+// Route to handle case where no user input is given.
+// Just return a string signifying what is missing.
 app.get('/timestamp', function(req, res) {
-
-  var msg = `
-  Missing UNIX timestamp or Natural Language Date.
-  `
-
-  res.send(msg);
+  res.send("Missing UNIX timestamp or Natural Language Date.");
 });
 
+// Route to handle user input.
 app.get('/timestamp/:userInput', function(req, res) {
 
   // Convert Date object to natural date string.
