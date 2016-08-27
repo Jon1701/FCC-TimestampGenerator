@@ -49,31 +49,44 @@ app.get('/timestamp/:userInput', function(req, res) {
   }
 
   // Get the route parameters, and convert to a JS date object..
-  var date = new Date(req.params['userInput']);
+  var userInput = req.params['userInput'];
 
-  // Calculate natural date string, and store it.
-  var natural = getNaturalDateString(date);
-  results['natural'] = natural;
+  // Check if user input is an integer.
+  if (parseInt(userInput)) {
 
-  // Get UNIX timestamp, and store it.
-  var unix = Math.floor(date / 1000);
-  results['unix'] = function() {
+    // Convert userInput as integer.
+    intUserInput = parseInt(userInput);
 
-    // Check if a valid timestamp.
-    if (unix <= 0 || unix == null) {
+    // Route parameter can be numeric, this implies a possible unix timestamp.
+    // Create a JS Date object.
+    var date = new Date(intUserInput);
 
-      // If timestamp is pre-1970, return null.
-      return null;
+    // Check if valid timestamp.
+    // If the time is greater than 0, then it is valid.
+    if ((date.getTime()) > 0) {
 
-    } else {
+      // Get the natural date.
+      results['natural'] = getNaturalDateString(date);
 
-      // Return timestamp.
-      return unix;
+      // Store unix timestamp.
+      results['unix'] = intUserInput;
+
     }
 
-  }();
+  } else {
 
-  // Return the results to client.
+    // If the user input is not an integer, need to parse the string.
+    var date = new Date(userInput);
+
+    // Get natural date string.
+    results['natural'] = getNaturalDateString(date);
+
+    // Calculate unix timestamp.
+    results['unix'] = Math.floor(date.getTime() / 1000);
+
+  }
+
+  // Return the results.
   res.send(results);
 
 });
