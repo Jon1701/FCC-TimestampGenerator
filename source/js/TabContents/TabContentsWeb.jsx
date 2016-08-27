@@ -101,7 +101,7 @@ export default class TabContentsWeb extends React.Component {
 
         <div className="container-form text-center">
           <div className="container-description">
-            Enter a Natural Date or a UNIX Timestamp:
+            Enter a Natural Date or a Unix Timestamp:
           </div>
 
           <div className="container-input">

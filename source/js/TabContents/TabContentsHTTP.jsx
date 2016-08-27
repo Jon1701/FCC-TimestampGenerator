@@ -50,7 +50,7 @@ export default class TabContentsHTTP extends React.Component {
 
     return (
       <div className={myClasses}>
-        <p>Access the server at <a href={'/timestamp'} target="_blank">{this.state.hostname + '/timestamp/<Date or UNIX Timestamp>'}</a>.</p>
+        <p>Access the server at <a href={'/timestamp'} target="_blank">{this.state.hostname + '/timestamp/<Date or Unix Timestamp>'}</a>.</p>
 
           Example:
             <p>
@@ -59,7 +59,7 @@ export default class TabContentsHTTP extends React.Component {
             <p>
               <a href={'/timestamp/1483246800'} target="_blank">{linkLabel + '/1483246800'}</a>
             </p>
-        
+
       </div>
     )
   }
