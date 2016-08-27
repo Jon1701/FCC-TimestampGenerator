@@ -2,6 +2,22 @@
 var express = require('express');
 var app = express();
 
+// API endpoint to get the hostname of the server.
+app.get('/hostname', function(req, res) {
+  return res.json({
+    'hostname': req.hostname
+  })
+});
+
+app.get('/timestamp', function(req, res) {
+
+  var msg = `
+  Missing UNIX timestamp or Natural Language Date.
+  `
+
+  res.send(msg);
+});
+
 app.get('/timestamp/:userInput', function(req, res) {
 
   // Convert Date object to natural date string.
@@ -59,7 +75,10 @@ app.get('/timestamp/:userInput', function(req, res) {
 
     // Route parameter can be numeric, this implies a possible unix timestamp.
     // Create a JS Date object.
-    var date = new Date(intUserInput);
+    //
+    // Multiply by 1000 seconds since UNIX time is in seconds, but Date()
+    // expects milliseconds.
+    var date = new Date(intUserInput*1000);
 
     // Check if valid timestamp.
     // If the time is greater than 0, then it is valid.
