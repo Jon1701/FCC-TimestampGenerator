@@ -109,12 +109,13 @@ app.get('/timestamp/:userInput', function(req, res) {
 });
 
 // Root folder. Serve index.html.
-app.use(express.static('build'));
+app.use(express.static('dist'));
 app.get('/', function(req, res) {
-  res.render(__dirname + '/build/index.html');
+  res.render(__dirname + '/dist/index.html');
 });
 
-// Listen on port 8080.
-app.listen(8080, function() {
+// Let the port be set by Heroku.
+var port = process.env.PORT || 8080
+app.listen(port, function() {
   console.log('Listening for connections on PORT 8080');
 });
